@@ -236,7 +236,10 @@ class Ui_calculator(object):
 
 
     def func_plus_minus(self): 
-        self.lineEdit.setText(f"{'-'}{self.lineEdit.text()}")
+        if '-' in self.lineEdit.text():
+            self.lineEdit.setText(f"{self.lineEdit.text().replace('-', '')}")
+        else:
+            self.lineEdit.setText(f"{'-'}{self.lineEdit.text()}")
 
 
 
